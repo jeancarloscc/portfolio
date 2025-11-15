@@ -6,7 +6,7 @@ Portfólio profissional totalmente estático desenvolvido com React + TypeScript
 
 ```
 portfolio/
-├── src/                   # Frontend React
+├── src/                   # Front-end React
 │   ├── components/        # Componentes React
 │   │   └── ui/           # Componentes UI (shadcn/ui - 46 componentes!)
 │   ├── pages/            # Páginas da aplicação
