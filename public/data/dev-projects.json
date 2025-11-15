@@ -1,22 +1,82 @@
 [
   {
     "id": 1,
-    "title": "Nome do Projeto",
-    "description": "Descrição breve do projeto e suas funcionalidades principais.",
-    "longDescription": "Descrição mais detalhada explicando o objetivo, desafios e soluções implementadas.",
-    "technologies": ["React", "Node.js", "MongoDB", "Docker"],
-    "github": "https://github.com/seu-usuario/nome-do-repo",
-    "demo": "https://link-para-demo.com",
-    "image": "/images/projects/projeto1.png",
-    "stars": 10,
-    "forks": 5,
-    "year": 2024,
-    "status": "Concluído",
+    "title": "OrientPOSCOMP System",
+    "description": "Sistema automatizado e inteligente de orientação acadêmica para alunos de pós-graduação.",
+    "longDescription": "Plataforma completa para gestão e orientação de estudantes de pós-graduação, utilizando algoritmos de recomendação e análise de dados acadêmicos para otimizar o processo de orientação.",
+    "technologies": ["Python", "Machine Learning", "Numpy", "Pandas", "Matplotlib"],
+    "github": "https://github.com/jeancarloscc/OrientPOSCOMP-System",
+    "image": "/images/projects/orientposcomp.png",
+    "year": "2024",
+    "status": "Em andamento",
     "highlights": [
-      "Feature importante 1",
-      "Feature importante 2",
-      "Feature importante 3"
+      "Sistema de recomendação de orientadores",
+      "Análise automática de perfil acadêmico"
     ],
     "order": 1
+  },
+  {
+    "id": 2,
+    "title": "Metaheuristics",
+    "description": "Biblioteca de implementações de algoritmos metaheurísticos para otimização.",
+    "longDescription": "Coleção de algoritmos de otimização metaheurística incluindo Algoritmos Genéticos, PSO, Simulated Annealing e outros, com aplicações práticas em problemas de otimização combinatória.",
+    "technologies": ["Python", "NumPy", "Matplotlib"],
+    "github": "https://github.com/jeancarloscc/metaheuristics",
+    "image": "/images/projects/metaheuristics.png",
+    "year": "2024",
+    "status": "Concluído",
+    "highlights": [
+      "Implementação de múltiplos algoritmos",
+      "Visualização de resultados"
+    ],
+    "order": 2
+  },
+  {
+    "id": 3,
+    "title": "Sistema Conta Corrente",
+    "description": "Sistema completo de gerenciamento de contas correntes bancárias.",
+    "longDescription": "Aplicação para gestão de contas bancárias com funcionalidades de depósito, saque, transferência e histórico de transações, desenvolvido como trabalho final de disciplina.",
+    "technologies": ["Java", "MySQL", "JDBC"],
+    "github": "https://github.com/jeancarloscc/sistema-conta-corrente-trab-final",
+    "image": "/images/projects/conta-corrente.png",
+    "year": "2023",
+    "status": "Concluído",
+    "highlights": [
+      "CRUD completo de contas",
+      "Sistema de transações",
+      "Histórico detalhado"
+    ],
+    "order": 3
+  },
+  {
+    "id": 4,
+    "title": "ChoppFlow",
+    "description": "Sistema de gestão para bares e eventos de chopp.",
+    "longDescription": "Plataforma para controle de venda de chopps em eventos e estabelecimentos, com sistema de fichas, controle de estoque e relatórios de vendas em tempo real.",
+    "technologies": ["Android", "Firebase", "Flutter"],
+    "github": "https://github.com/jeancarloscc/choppflow",
+    "image": "/images/projects/choppflow.png",
+    "year": "2024",
+    "status": "Concluído",
+    "highlights": [
+      "Controle de estoque em tempo real"
+    ],
+    "order": 4
+  },
+  {
+    "id": 5,
+    "title": "QRCode PIX",
+    "description": "Gerador de QR Code para pagamentos via PIX.",
+    "longDescription": "Ferramenta para geração de QR Codes PIX compatíveis com o padrão do Banco Central, facilitando a criação de cobranças e pagamentos instantâneos.",
+    "technologies": ["Python", "Streamlit", "QRCode", "PIX"],
+    "github": "https://github.com/jeancarloscc/qrcodepix",
+    "image": "/images/projects/qrcodepix.png",
+    "year": "2023",
+    "status": "Concluído",
+    "highlights": [
+      "Geração de QR Code PIX",
+      "Validação de dados"
+    ],
+    "order": 5
   }
 ]

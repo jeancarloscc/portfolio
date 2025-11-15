@@ -2,8 +2,10 @@
   "name": "Jean Carlos",
   "title": "Especialista em Inteligência Artificial",
   "description": "Doutorando em Ciência da Computação com ênfase em Inteligência Computacional. Experiência em Machine Learning, Deep Learning e desenvolvimento de soluções baseadas em IA.",
-  "email": "jean.carlos@example.com",
-  "linkedin": "linkedin.com/in/jeancarlos",
-  "github": "github.com/jeancarlos",
+  "photo": "/images/profile.jpg",
+  "email": "jeancc.costa@gmail.com",
+  "linkedin": "linkedin.com/in/jeancc-costa",
+  "github": "github.com/jeancarloscc",
+  "instagram": "instagram.com/jeancc.costa",
   "location": "Belém, PA - Brasil"
 }
