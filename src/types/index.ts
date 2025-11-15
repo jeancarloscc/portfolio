@@ -11,6 +11,7 @@ export interface PersonalInfo {
   linkedin: string;
   github: string;
   instagram?: string;
+  photo?: string;
 }
 
 export interface Education {
