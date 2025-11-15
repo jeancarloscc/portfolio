@@ -67,12 +67,21 @@ export function HeroSection({ personalInfo, onNavigate }: HeroSectionProps) {
 
           {/* Visual */}
           <div className="flex items-center justify-center">
-            <div
-              className="w-80 h-80 rounded-full flex items-center justify-center"
-              style={{ backgroundColor: colors.background.accent }}
-            >
-              <Brain className="w-40 h-40" style={{ color: colors.primary, opacity: 0.5 }} />
-            </div>
+            {personalInfo.photo ? (
+              <img 
+                src={personalInfo.photo} 
+                alt={personalInfo.name}
+                className="w-80 h-80 rounded-full object-cover shadow-2xl"
+                style={{ border: `4px solid ${colors.primary}` }}
+              />
+            ) : (
+              <div
+                className="w-80 h-80 rounded-full flex items-center justify-center"
+                style={{ backgroundColor: colors.background.accent }}
+              >
+                <Brain className="w-40 h-40" style={{ color: colors.primary, opacity: 0.5 }} />
+              </div>
+            )}
           </div>
         </div>
       </div>

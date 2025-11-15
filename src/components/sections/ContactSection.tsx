@@ -1,4 +1,4 @@
-import { Mail, MapPin, Linkedin, Github } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Github, Instagram } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Card, CardContent } from '../ui/card';
 import { SectionContainer, SectionHeader } from '../common/SectionHeader';
@@ -49,7 +49,7 @@ export function ContactSection({ personalInfo }: ContactSectionProps) {
           </Card>
         </div>
 
-        <div className="flex items-center justify-center space-x-6">
+        <div className="flex items-center justify-center flex-wrap gap-4">
           <Button
             variant="outline"
             size="lg"
@@ -71,6 +71,19 @@ export function ContactSection({ personalInfo }: ContactSectionProps) {
             <Github className="w-5 h-5 mr-2" />
             GitHub
           </Button>
+
+          {personalInfo.instagram && (
+            <Button
+              variant="outline"
+              size="lg"
+              className={transitions.scale}
+              style={{ borderColor: colors.primary, color: colors.primary }}
+              onClick={() => window.open(`https://${personalInfo.instagram}`, '_blank')}
+            >
+              <Instagram className="w-5 h-5 mr-2" />
+              Instagram
+            </Button>
+          )}
         </div>
       </div>
     </SectionContainer>
