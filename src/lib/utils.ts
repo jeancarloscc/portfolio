@@ -5,6 +5,16 @@
  * 
  * Funções auxiliares reutilizáveis
  */
+import { clsx, type ClassValue } from 'clsx'
+import { twMerge } from 'tailwind-merge'
+
+/**
+ * Combina classes de forma inteligente usando clsx + tailwind-merge
+ * Similar ao helper usado em vários design systems.
+ */
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
 
 /**
  * Formata texto para URL amigável (slug)
