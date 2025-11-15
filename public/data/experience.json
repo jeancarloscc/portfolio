@@ -1,0 +1,94 @@
+[
+  {
+    "id": 1,
+    "role": "Professor Regente",
+    "organization": "Centro Universitário Leonardo da Vinci (UNIASSELVI)",
+    "period": "2024 - Atual",
+    "description": "Docente em cursos da área de Tecnologia da Informação. Ministro disciplinas de Processo de Software, Análise Orientada a Objetos, Perspectivas Profissionais, Lógica e Técnicas de Programação, Fundamentos da Computação, Análise de Software Educativo, Segurança em TI e Governança de TI.",
+    "achievements": [
+      "Disciplinas: Processo de Software, Análise Orientada a Objetos",
+      "Disciplinas: Perspectivas Profissionais, Lógica e Técnicas de Programação",
+      "Disciplinas: Fundamentos da Computação, Análise de Software Educativo, Segurança em TI",
+      "Disciplina: Governança de TI"
+    ],
+    "order": 1
+  },
+  {
+    "id": 2,
+    "role": "Tutor Externo",
+    "organization": "Centro Universitário Leonardo da Vinci (UNIASSELVI)",
+    "period": "2024",
+    "description": "Tutor Externo no curso de Segunda Licenciatura em Informática. Responsável pela mediação dos encontros semanais, acompanhamento do aprendizado dos alunos e apoio na realização das atividades acadêmicas.",
+    "achievements": [
+      "Mediação de encontros semanais com alunos",
+      "Acompanhamento individualizado do aprendizado",
+      "Suporte em atividades acadêmicas e avaliações"
+    ],
+    "order": 2
+  },
+  {
+    "id": 3,
+    "role": "Professor",
+    "organization": "Universidade da Amazônia (UNAMA)",
+    "period": "2024",
+    "description": "Docente da disciplina de Administração em Serviço e Informática Aplicada no curso técnico de Prótese Dentária. Responsável pelo ensino de Windows e aplicativos do pacote Microsoft Office.",
+    "achievements": [
+      "Ensino de ferramentas do Microsoft Office",
+      "Capacitação em Windows para estudantes técnicos",
+      "Aplicação prática de informática na área da saúde"
+    ],
+    "order": 3
+  },
+  {
+    "id": 4,
+    "role": "Monitor",
+    "organization": "Universidade Federal Rural da Amazônia (UFRA)",
+    "period": "2021 - 2022",
+    "description": "Monitor da disciplina de Metodologia Científica no Campus Capitão Poço. Auxílio no ensino, orientação de alunos em trabalhos acadêmicos e suporte em pesquisas científicas. Carga horária: 472 horas.",
+    "achievements": [
+      "Auxílio no ensino de Metodologia Científica",
+      "Orientação de alunos em trabalhos acadêmicos",
+      "Suporte em pesquisas e projetos científicos"
+    ],
+    "order": 4
+  },
+  {
+    "id": 5,
+    "role": "Bolsista de Iniciação Científica",
+    "organization": "Universidade Federal Rural da Amazônia (UFRA)",
+    "period": "2021 - 2022",
+    "description": "Participante voluntário do Programa Institucional de Iniciação Científica (PIVIC). Desenvolvimento de projeto de iniciação científica com produção e apresentação de resultados. Carga horária: 480 horas.",
+    "achievements": [
+      "Desenvolvimento de projeto de iniciação científica",
+      "Participação em atividades de pesquisa",
+      "Produção científica e apresentação de resultados"
+    ],
+    "order": 5
+  },
+  {
+    "id": 6,
+    "role": "Bolsista - Residência Pedagógica",
+    "organization": "Universidade Federal Rural da Amazônia (UFRA)",
+    "period": "2018 - 2020",
+    "description": "Bolsista do Programa Residência Pedagógica (CAPES). Atividades de prática docente realizadas na Escola Estadual de Ensino Fundamental e Médio Osvaldo Cruz, Capitão Poço - PA. Desenvolvimento de metodologias de ensino e planejamento de aulas de Computação.",
+    "achievements": [
+      "Prática docente em escola pública",
+      "Desenvolvimento de metodologias de ensino",
+      "Planejamento e execução de aulas de Computação"
+    ],
+    "order": 6
+  },
+  {
+    "id": 7,
+    "role": "Técnico de Nível Superior",
+    "organization": "Prefeitura Municipal de Capitão Poço - CREAS",
+    "period": "2017 - 2022",
+    "description": "Técnico de Nível Superior no Serviço Especializado em Abordagem Social do Centro de Referência Especializado de Assistência Social (CREAS). Atendimento especializado à população em situação de vulnerabilidade e trabalho em equipe multidisciplinar.",
+    "achievements": [
+      "Atendimento especializado à população em situação de vulnerabilidade",
+      "Participação na organização da Conferência Municipal de Assistência Social (07/2017)",
+      "Trabalho em equipe multidisciplinar do CREAS"
+    ],
+    "order": 7
+  }
+]

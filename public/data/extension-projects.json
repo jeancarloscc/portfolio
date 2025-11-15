@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Abordagens sobre Pesquisa Científica em Contextos Universitários",
+    "description": "Projeto de extensão universitária que visa capacitar alunos de instituições de ensino superior de Capitão Poço-PA nos fundamentos da construção do conhecimento científico. Busca levar os estudantes a compreenderem a lógica da pesquisa científica, possibilitando a elaboração, desenvolvimento e execução de trabalhos acadêmicos e projetos com embasamento científico. Realizado em modalidades presenciais e remotas (Google Meet e YouTube).",
+    "period": "2024 - Atual",
+    "status": "Em andamento",
+    "type": "Extensão",
+    "institution": "UFRA - Campus Capitão Poço",
+    "role": "Integrante",
+    "coordinator": "Almir Pantoja Rodrigues",
+    "target": "500 participantes das comunidades interna e externa à UFRA",
+    "team": ["Jean Carlos de Carvalho Costa", "Almir Pantoja Rodrigues", "Áurea Peniche Martins", "Regiane Vanessa de Souza Baia", "Elianne Barreto Sabino", "Allan Douglas Bento da Costa", "Janice Souza Santos", "Ruany Vitória Borges da Silva", "Terezinha de Jesus de Oliveira Moraes", "Cynthia Débora da Cunha de Oliveira", "Maura da Silva Costa Furtado", "Cristiana Guerra Matos", "Eric Victor de Oliveira Ferreira", "Felipe Fajardo Villela Antolin Barberena", "Raimundo Thiago Lima da Silva", "José Darlon Nascimento Alves"],
+    "keywords": ["Pesquisa Científica", "Extensão Universitária", "Metodologia Científica", "Capacitação Acadêmica"],
+    "order": 1
+  },
+  {
+    "id": 2,
+    "title": "A Tecnologia da Informação na Sala de Aula: O Facebook como Ferramenta Pedagógica nas Aulas de Literatura Luso Brasileira",
+    "description": "Projeto de extensão que utilizou o Facebook como ferramenta pedagógica para o ensino-aprendizagem da disciplina de Literatura Luso Brasileira, contemplando atividades presenciais e online. Aplicado na Escola Estadual Padre Vitaliano Maria Vari.",
+    "period": "2017",
+    "status": "Concluído",
+    "type": "Extensão",
+    "institution": "UFRA - Campus Capitão Poço",
+    "role": "Integrante",
+    "coordinator": "Almir Pantoja Rodrigues",
+    "location": "Escola Estadual Padre Vitaliano Maria Vari",
+    "team": ["Jean Carlos de Carvalho Costa", "Edivane Coutinho Maciel", "Paula Valena Santos das Mercês", "Almir Pantoja Rodrigues", "Carlos Jean Ferreira de Quadros"],
+    "keywords": ["Tecnologia na Educação", "Facebook", "Literatura", "Ferramenta Pedagógica", "Redes Sociais na Educação"],
+    "order": 2
+  }
+]

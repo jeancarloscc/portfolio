@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Machine Learning & Deep Learning",
+    "items": ["TensorFlow", "PyTorch", "Scikit-learn", "Keras", "XGBoost"]
+  },
+  {
+    "category": "Processamento de Linguagem Natural",
+    "items": ["NLTK", "spaCy", "Transformers", "BERT", "GPT"]
+  },
+  {
+    "category": "Large Language Models",
+    "items": ["OpenAI API", "LangChain", "RAG Systems", "Fine-tuning", "Prompt Engineering"]
+  },
+  {
+    "category": "Ciência de Dados",
+    "items": ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn"]
+  },
+  {
+    "category": "Ferramentas & Plataformas",
+    "items": ["Git", "Docker", "Jupyter", "MLflow", "AWS"]
+  }
+]

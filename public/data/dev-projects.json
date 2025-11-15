@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Nome do Projeto",
+    "description": "Descrição breve do projeto e suas funcionalidades principais.",
+    "longDescription": "Descrição mais detalhada explicando o objetivo, desafios e soluções implementadas.",
+    "technologies": ["React", "Node.js", "MongoDB", "Docker"],
+    "github": "https://github.com/seu-usuario/nome-do-repo",
+    "demo": "https://link-para-demo.com",
+    "image": "/images/projects/projeto1.png",
+    "stars": 10,
+    "forks": 5,
+    "year": 2024,
+    "status": "Concluído",
+    "highlights": [
+      "Feature importante 1",
+      "Feature importante 2",
+      "Feature importante 3"
+    ],
+    "order": 1
+  }
+]

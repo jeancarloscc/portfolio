@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "degree": "Doutorado em Ciência da Computação",
+    "institution": "Universidade Federal do Pará (UFPA)",
+    "period": "2024 - Presente",
+    "focus": "Inteligência Computacional",
+    "description": "Título: Aplicação de Modelos Transformers na Resolução e Avaliação de Questões em Exames na Área da Computação. Orientador: Dr. Reginaldo Cordeiro dos Santos Filho. Bolsista CAPES.",
+    "keywords": ["Modelos Transformers", "Exames em Computação", "Inteligência Computacional"],
+    "order": 1
+  },
+  {
+    "id": 2,
+    "degree": "Mestrado em Ciência da Computação",
+    "institution": "Universidade Federal do Pará (UFPA)",
+    "period": "2022 - 2024",
+    "focus": "Inteligência Computacional",
+    "description": "Título: Sistema de Orientação Vocacional Automatizado e Inteligente com Base na Análise dos Microdados do POSCOMP. Orientador: Dr. Reginaldo Cordeiro dos Santos Filho. Bolsista CAPES.",
+    "keywords": ["Desempenho no POSCOMP", "Sistema de Orientação Vocacional", "Processo KDD", "Análise Exploratória dos Dados"],
+    "order": 2
+  },
+  {
+    "id": 3,
+    "degree": "Especialização em Desenvolvimento Ágil de Software",
+    "institution": "Universidade Federal do Paraná (UFPR)",
+    "period": "2024 - Presente",
+    "description": "Título: Memorial de Projetos: Integração Multidisciplinar no Desenvolvimento Ágil de Software – da Modelagem à Entrega Contínua. Orientadora: Dra. Rafaela Mantovani Fontana. Bolsista FUNPAR.",
+    "order": 3
+  },
+  {
+    "id": 4,
+    "degree": "Especialização em Data Science",
+    "institution": "Centro Universitário Fael (UNIFAEL)",
+    "period": "2022 - 2024",
+    "description": "Carga Horária: 360h. Formação em Ciência de Dados com foco em análise e modelagem de dados.",
+    "order": 4
+  },
+  {
+    "id": 5,
+    "degree": "Graduação em Computação",
+    "institution": "Universidade Federal Rural da Amazônia (UFRA)",
+    "period": "2015 - 2019",
+    "description": "Título: Algoritmos Genéticos para Alocação da Grade de Professores da Escola Osvaldo Cruz do Município de Capitão Poço. Orientador: Dr. Edson Koiti Kudo Yasojima.",
+    "keywords": ["Algoritmos Genéticos", "Otimização", "Alocação de Recursos"],
+    "order": 5
+  }
+]

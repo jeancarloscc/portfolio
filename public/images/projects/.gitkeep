@@ -1,0 +1,14 @@
+# Pasta de Imagens de Projetos
+
+Coloque aqui as imagens dos seus projetos referenciadas no arquivo `projects.json`.
+
+## Formato recomendado:
+- PNG ou JPG
+- Tamanho: ~1200x630px (proporção 16:9)
+- Peso: < 500KB para melhor performance
+
+## Exemplos de nomes:
+- sentiment-analysis.png
+- rag-chatbot.png
+- recommendation.png
+- vision-api.png
