@@ -10,6 +10,7 @@ export interface PersonalInfo {
   location: string;
   linkedin: string;
   github: string;
+  instagram?: string;
 }
 
 export interface Education {
