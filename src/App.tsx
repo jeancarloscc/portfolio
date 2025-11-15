@@ -9,8 +9,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 
 export default function App() {
+  // Ajusta basename para funcionar em subpath (GitHub Pages /portfolio/)
+  const base = import.meta.env.BASE_URL || '/';
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={base}>
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
