@@ -1,293 +1,60 @@
-# 🎨 Portfólio - Arquitetura Profissional
+# Arquitetura do Portfólio
 
-## 📋 Visão Geral
+Site de página única em React 19 + Vite + TypeScript + Tailwind CSS v4, publicado no GitHub Pages em `/portfolio/` pelo workflow `.github/workflows/deploy.yml`.
 
-Projeto totalmente **refatorado** seguindo as melhores práticas de desenvolvimento front-end profissional. A aplicação foi modularizada, tipada e otimizada para manutenibilidade e escalabilidade.
-
-## 🏗️ Estrutura do Projeto
+## Estrutura
 
 ```
 src/
-├── types/                      # 📦 Definições de tipos TypeScript
-│   └── index.ts               # Todos os tipos do projeto
-│
-├── constants/                  # 🎨 Configurações e constantes
-│   ├── theme.ts               # Cores, espaçamentos, transições
-│   └── config.ts              # Config da API e mensagens
-│
-├── services/                   # 🌐 Camada de serviços/API
-│   └── api.ts                 # Serviço de dados com retry e tipagem
-│
-├── hooks/                      # 🪝 Custom hooks reutilizáveis
-│   ├── usePortfolioData.ts    # Hook para carregar dados
-│   └── useScrollNavigation.ts # Hook para navegação com scroll spy
-│
-├── lib/                        # 🛠️ Utilitários
-│   └── utils.ts               # Funções auxiliares (slugify, debounce, etc)
-│
-├── components/                 # 🧩 Componentes React
-│   ├── common/                # Componentes comuns reutilizáveis
-│   │   ├── SectionHeader.tsx  # Cabeçalhos de seção
-│   │   ├── States.tsx         # Loading e Error states
-│   │   └── Badges.tsx         # Badges customizados
-│   │
-│   ├── layout/                # Componentes de layout
-│   │   ├── Header.tsx         # Header com navegação
-│   │   └── Footer.tsx         # Footer
-│   │
-│   ├── sections/              # Seções da página
-│   │   ├── HeroSection.tsx
-│   │   ├── EducationSection.tsx
-│   │   ├── SkillsSection.tsx
-│   │   ├── ProjectsSection.tsx
-│   │   ├── DevProjectsSection.tsx
-│   │   ├── PublicationsSection.tsx
-│   │   ├── ExperienceSection.tsx
-│   │   └── ContactSection.tsx
-│   │
-│   ├── cards/                 # Cards especializados
-│   │   └── DevProjectCard.tsx
-│   │
-│   └── ui/                    # Componentes UI base (shadcn)
-│       └── ...
-│
-├── pages/                      # 📄 Páginas da aplicação
-│   └── Home.tsx               # Página principal refatorada
-│
-├── index.ts                    # 📤 Exports centralizados
-├── App.tsx                     # 🚀 Componente raiz
-└── main.tsx                    # ⚡ Entry point
+├── data/                  # Conteúdo do site (JSON) — edite aqui
+│   ├── index.ts           # Importa os JSON no build e aplica os tipos
+│   └── *.json             # Veja src/data/README.md
+├── types/index.ts         # Tipos dos dados e ids das seções
+├── lib/portfolio.ts       # Lógica pura: filtro de publicações, ordem dos projetos, linha do tempo
+├── hooks/
+│   └── useScrollNavigation.ts  # Rolagem suave e destaque da seção ativa no menu
+├── components/
+│   ├── common/            # Section (casca padrão das seções) e Chip
+│   ├── layout/            # Header (com menu mobile) e Footer
+│   ├── hero/              # HeroBackground: constelação e ondas em SVG
+│   ├── research/          # PublicationList e ResearchProjectCard
+│   └── sections/          # Uma seção por arquivo
+├── pages/Home.tsx         # Monta a página na ordem das seções
+├── index.css              # Tokens de cor e fonte (@theme) e estilos globais
+└── main.tsx
 ```
 
-## ✨ Melhorias Implementadas
+## Seções
 
-### 🎯 Arquitetura
+| Ordem | id | Componente | Dados |
+|---|---|---|---|
+| 1 | `home` | `HeroSection` | `personal-info.json` + totais de publicações, projetos e repositórios |
+| 2 | `about` | `AboutSection` | `about.json` + `skills.json` |
+| 3 | `research` | `ResearchSection` | `publications.json` + `projects.json` |
+| 4 | `code` | `CodeSection` | `dev-projects.json` |
+| 5 | `journey` | `JourneySection` | `education.json` + `experience.json` |
+| 6 | `contact` | `ContactSection` | `personal-info.json` |
 
-- ✅ **Separação de Concerns**: UI, lógica e dados separados
-- ✅ **Componentização**: Componentes pequenos e reutilizáveis
-- ✅ **Custom Hooks**: Lógica compartilhada extraída
-- ✅ **Atomic Design**: Hierarquia clara de componentes
+`extension-projects.json` ainda não é exibido.
 
-### 📘 TypeScript
+## Dados
 
-- ✅ **100% TypeScript**: Todos os arquivos convertidos
-- ✅ **Tipos Completos**: Interfaces para todos os dados
-- ✅ **Type Safety**: Imports de tipos com `import type`
-- ✅ **Inferência**: TypeScript aproveita inferência onde possível
+Os JSON são importados em tempo de build, então não há requisições nem tela de carregamento. Para atualizar o conteúdo, edite o JSON em `src/data/` e faça push. Links vazios (`""`) não aparecem no site.
 
-### 🎨 Design System
+## Visual
 
-- ✅ **Theme Centralizado**: Cores e estilos em constants
-- ✅ **Componentes Reutilizáveis**: Badges, Headers, States
-- ✅ **Consistência Visual**: Estilos padronizados
+As cores e fontes ficam no bloco `@theme` de `src/index.css` e são usadas como classes Tailwind (`bg-night`, `text-ink-muted`, `bg-brand-strong`, `font-display`...). Regras:
 
-### ⚡ Performance
+- Texto sempre com contraste ≥ 4,5:1 (WCAG AA). Os valores já conferidos estão comentados no `@theme`.
+- Texto branco só sobre `brand-strong` (`#2563eb`); `brand` (`#3b82f6`) é para bordas e desenhos.
+- Animações respeitam `prefers-reduced-motion`.
+- Links externos usam `<a target="_blank" rel="noopener noreferrer">`.
 
-- ✅ **Code Splitting**: Imports dinâmicos onde necessário
-- ✅ **Memoization**: React.memo em componentes pesados
-- ✅ **Optimistic Updates**: Loading states eficientes
-- ✅ **Scroll Spy**: Navegação inteligente com IntersectionObserver
-
-### 🔧 Manutenibilidade
-
-- ✅ **DRY**: Sem repetição de código
-- ✅ **Single Responsibility**: Cada componente faz uma coisa
-- ✅ **Documentação**: Comentários JSDoc em funções
-- ✅ **Organização**: Estrutura de pastas lógica
-
-## 🚀 Como Usar
-
-### Desenvolvimento
+## Comandos
 
 ```bash
-npm run dev
+npm run dev      # servidor local em http://localhost:3000
+npm run build    # build de produção em dist/
+npm run preview  # testa o build localmente
+npm run lint     # ESLint
 ```
-
-### Build
-
-```bash
-npm run build
-```
-
-### Preview
-
-```bash
-npm run preview
-```
-
-## 📚 Guia de Componentes
-
-### Custom Hooks
-
-#### `usePortfolioData()`
-Gerencia o carregamento de todos os dados do portfólio.
-
-```tsx
-const {
-  personalInfo,
-  education,
-  skills,
-  // ... outros dados
-  isLoading,
-  error,
-} = usePortfolioData();
-```
-
-#### `useScrollNavigation()`
-Gerencia navegação suave e detecta seção ativa.
-
-```tsx
-const { activeSection, scrollToSection } = useScrollNavigation();
-```
-
-### Componentes Comuns
-
-#### `<SectionHeader>`
-Cabeçalho padronizado para seções.
-
-```tsx
-<SectionHeader 
-  icon={Code} 
-  title="Habilidades" 
-  subtitle="Minhas competências técnicas"
-/>
-```
-
-#### `<LoadingState>` e `<ErrorState>`
-Estados de loading e erro centralizados.
-
-```tsx
-{isLoading && <LoadingState />}
-{error && <ErrorState message={error} onRetry={refetch} />}
-```
-
-#### Badges
-Badges tipados e estilizados.
-
-```tsx
-<StatusBadge status="Em andamento" />
-<YearBadge year="2024" />
-<TechBadge tech="React" />
-```
-
-## 🎨 Personalização
-
-### Cores
-
-Edite `src/constants/theme.ts`:
-
-```typescript
-export const colors = {
-  primary: '#4169E1',
-  secondary: '#B281AB',
-  // ...
-};
-```
-
-### Navegação
-
-Edite `src/constants/theme.ts`:
-
-```typescript
-export const appConfig = {
-  navigation: {
-    links: [
-      { id: 'home', label: 'Início' },
-      // Adicione mais links...
-    ],
-  },
-};
-```
-
-## 🔄 Fluxo de Dados
-
-```
-1. usePortfolioData() → Carrega dados via API
-2. api.ts → Faz fetch dos JSON files
-3. Dados tipados → Passados para componentes
-4. Componentes → Renderizam UI
-```
-
-## 📦 Dados
-
-Todos os dados estão em `public/data/*.json`:
-
-- `personal-info.json` - Informações pessoais
-- `education.json` - Formação acadêmica
-- `skills.json` - Habilidades técnicas
-- `projects.json` - Projetos de pesquisa
-- `dev-projects.json` - Projetos de desenvolvimento
-- `publications.json` - Publicações científicas
-- `experience.json` - Experiência profissional
-
-## 🧪 Testes
-
-Para adicionar testes:
-
-```bash
-npm install -D vitest @testing-library/react @testing-library/jest-dom
-```
-
-## 📝 Convenções
-
-### Nomenclatura
-
-- **Componentes**: PascalCase (`HeroSection.tsx`)
-- **Hooks**: camelCase com prefixo `use` (`usePortfolioData.ts`)
-- **Utils**: camelCase (`slugify`, `debounce`)
-- **Constants**: UPPER_CASE ou camelCase dependendo do contexto
-
-### Imports
-
-```typescript
-// Types sempre com 'import type'
-import type { PersonalInfo } from '../types';
-
-// Componentes e funções normalmente
-import { Button } from '../components/ui/button';
-```
-
-### Estrutura de Componente
-
-```typescript
-import type { Props } from '../types';
-import { useState } from 'react';
-import { colors } from '../constants/theme';
-
-interface ComponentProps {
-  // Props tipadas
-}
-
-/**
- * Documentação JSDoc
- */
-export function Component({ prop }: ComponentProps) {
-  // Hooks
-  // Estados
-  // Handlers
-  // Render
-  return <div>...</div>;
-}
-```
-
-## 🎯 Próximos Passos
-
-- [ ] Adicionar testes unitários
-- [ ] Implementar lazy loading de imagens
-- [ ] Adicionar animações com Framer Motion
-- [ ] Implementar dark mode
-- [ ] Adicionar i18n (internacionalização)
-- [ ] Implementar PWA
-- [ ] Adicionar analytics
-
-## 🤝 Contribuindo
-
-Este é um projeto pessoal, mas sugestões são bem-vindas!
-
-## 📄 Licença
-
-© 2024 - Todos os direitos reservados.
-
----
-
-**Desenvolvido com ❤️ usando React, TypeScript e Tailwind CSS**

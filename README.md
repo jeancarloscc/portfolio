@@ -6,26 +6,17 @@ Portfólio profissional totalmente estático desenvolvido com React + TypeScript
 
 ```
 portfolio/
-├── src/                   # Front-end React
-│   ├── components/        # Componentes React
-│   │   └── ui/           # Componentes UI (shadcn/ui - 46 componentes!)
-│   ├── pages/            # Páginas da aplicação
-│   ├── services/         # Serviços (busca dados JSON)
-│   ├── hooks/            # Custom hooks
-│   ├── lib/              # Utilitários
-│   ├── App.tsx           # Componente principal
-│   └── main.tsx          # Entry point
-├── public/               # Arquivos estáticos
-│   ├── data/            # ⭐ Dados em JSON (seu conteúdo!)
-│   │   ├── personal-info.json
-│   │   ├── education.json
-│   │   ├── skills.json
-│   │   ├── projects.json
-│   │   ├── publications.json
-│   │   └── experience.json
-│   └── images/          # Imagens do portfólio
-└── backend/             # [LEGADO] Não usado no GitHub Pages
+├── src/
+│   ├── data/          # ⭐ Dados em JSON (seu conteúdo!)
+│   ├── components/    # Seções, layout e componentes comuns
+│   ├── lib/           # Lógica de ordenação e filtros
+│   ├── pages/         # Home (monta a página)
+│   └── index.css      # Cores e fontes do tema
+└── public/
+    └── images/        # Foto e imagens
 ```
+
+Detalhes em [ARCHITECTURE.md](./ARCHITECTURE.md).
 
 ## 🚀 Tecnologias
 
@@ -33,9 +24,8 @@ portfolio/
 - ⚛️ React 19 + TypeScript
 - ⚡ Vite (Build tool ultrarrápido)
 - 🎨 TailwindCSS v4 (Estilização moderna)
-- 🧩 shadcn/ui (46 componentes UI premium)
 - 🛣️ React Router (Roteamento)
-- 🌐 Fetch API (Busca dados JSON estáticos)
+- 📄 Dados em JSON importados no build
 
 ### Deploy
 - 📦 **GitHub Pages** - Hospedagem gratuita e simples
@@ -44,18 +34,8 @@ portfolio/
 
 ## 📚 Documentação
 
-Este projeto possui documentação completa e organizada:
-
-- 📖 **[QUICKSTART.md](./QUICKSTART.md)** - Guia rápido de início (5 minutos)
-- 🏛️ **[STRUCTURE.md](./STRUCTURE.md)** - Arquitetura detalhada do projeto
-- 🧩 **[COMPONENTS.md](./COMPONENTS.md)** - Guia completo dos 46 componentes UI
-- 📋 **[SUMMARY.md](./SUMMARY.md)** - Sumário da reorganização do projeto
-- 📅 **[CHANGELOG.md](./CHANGELOG.md)** - Histórico de versões e mudanças
-- 📚 **[INDEX.md](./INDEX.md)** - Índice completo da documentação
-- 🚀 **[DEPLOY.md](./DEPLOY.md)** - Guia de deploy em múltiplas plataformas
-- 📝 **[public/data/README.md](./public/data/README.md)** - Como editar seus dados
-
-**👉 Novo no projeto? Comece com o [QUICKSTART.md](./QUICKSTART.md)!**
+- 🏛️ **[ARCHITECTURE.md](./ARCHITECTURE.md)** - Estrutura do código, seções e regras do visual
+- 📝 **[src/data/README.md](./src/data/README.md)** - Como editar seus dados
 
 ## ⚡ Início Rápido
 
@@ -67,22 +47,24 @@ npm install
 npm run dev
 
 # 3. Abra no navegador
-# http://localhost:5173
+# http://localhost:3000
 ```
 
 Pronto! Seu portfólio está rodando localmente! 🎉
 
 ## ✏️ Personalize Seu Portfólio
 
-Todos os dados do seu portfólio estão em arquivos JSON simples em `public/data/`:
+Todos os dados do seu portfólio estão em arquivos JSON simples em `src/data/`:
 
 ```bash
-public/data/
-├── personal-info.json   # 👤 Seu nome, título, contatos
-├── education.json       # 🎓 Formação acadêmica
+src/data/
+├── personal-info.json   # 👤 Nome, título, frase do topo e contatos
+├── about.json           # 🧭 Pilares da seção "O que eu faço"
 ├── skills.json          # 💪 Habilidades técnicas
-├── projects.json        # 🚀 Seus projetos
 ├── publications.json    # 📝 Artigos publicados
+├── projects.json        # 🔬 Projetos de pesquisa
+├── dev-projects.json    # 💻 Repositórios do GitHub
+├── education.json       # 🎓 Formação acadêmica
 └── experience.json      # 💼 Experiências profissionais
 ```
 
@@ -90,14 +72,14 @@ public/data/
 
 1. **Abra o arquivo JSON que deseja modificar**
    ```bash
-   code public/data/personal-info.json
+   code src/data/personal-info.json
    ```
 
-2. **Edite os dados** (veja o [guia completo](public/data/README.md))
+2. **Edite os dados** (veja o [guia completo](src/data/README.md))
 
 3. **Salve e recarregue a página** - as mudanças aparecem instantaneamente!
 
-📖 **Guia detalhado:** [`public/data/README.md`](public/data/README.md)
+📖 **Guia detalhado:** [`src/data/README.md`](src/data/README.md)
 
 ## 🏗️ Build de Produção
 
@@ -113,44 +95,17 @@ O build estará em `dist/` pronto para deploy! 📦
 
 ## 🚀 Deploy no GitHub Pages
 
-### Método 1: Script Automático (Recomendado)
+O deploy é automático: todo push na branch `main` dispara o workflow `.github/workflows/deploy.yml`, que faz o build e publica o site.
 
 ```bash
-# Execute o script de deploy
-./deploy.sh
-```
-
-### Método 2: Manual
-
-```bash
-# 1. Crie um repositório no GitHub
-# https://github.com/new
-
-# 2. Inicialize o Git e faça push
-git init
-git add .
-git commit -m "Initial commit: Portfolio estático"
-git branch -M main
-git remote add origin https://github.com/SEU_USUARIO/portfolio.git
-git push -u origin main
-
-# 3. Ative o GitHub Pages
-# Settings → Pages → Source: GitHub Actions
-```
-
-🎉 **Pronto!** Seu portfólio estará online em `https://SEU_USUARIO.github.io/portfolio/`
-
-### Atualizações Futuras
-
-```bash
-# 1. Edite seus dados JSON
-# 2. Commit e push
 git add .
 git commit -m "Atualiza dados do portfólio"
 git push
-
-# 3. GitHub Actions faz o resto automaticamente! 🤖
 ```
+
+🌐 Site publicado: [https://jeancarloscc.github.io/portfolio/](https://jeancarloscc.github.io/portfolio/)
+
+Na primeira vez, ative o GitHub Pages no repositório em **Settings → Pages → Source: GitHub Actions**.
 
 ## 📦 Scripts Disponíveis
 
@@ -170,8 +125,6 @@ Embora este projeto esteja otimizado para GitHub Pages, você também pode fazer
 - **Cloudflare Pages** - Conecte seu repositório
 - **Firebase Hosting** - `firebase deploy`
 
-📚 **Guia completo:** [DEPLOY.md](./DEPLOY.md)
-
 ## 🔧 Tecnologias Detalhadas
 
 ### Frontend Stack
@@ -182,22 +135,9 @@ Embora este projeto esteja otimizado para GitHub Pages, você também pode fazer
 - **React Router DOM** - Roteamento client-side
 - **Lucide React** - Ícones modernos e leves
 
-### UI Components (shadcn/ui)
-46 componentes premium incluídos:
-- Accordion, Alert Dialog, Avatar, Badge, Button
-- Calendar, Card, Carousel, Checkbox, Command
-- Context Menu, Dialog, Drawer, Dropdown Menu
-- Form, Hover Card, Input, Label, Menubar
-- Navigation Menu, Pagination, Popover, Progress
-- Radio Group, Resizable, Scroll Area, Select
-- Separator, Sheet, Skeleton, Slider, Switch
-- Table, Tabs, Textarea, Toast, Toggle, Tooltip
-- E muito mais!
-
 ### Build & Dev Tools
 - **PostCSS** - Processamento CSS avançado
 - **ESLint** - Linting JavaScript/TypeScript
-- **Autoprefixer** - Prefixos CSS automáticos
 
 ## 🎨 Personalização
 
@@ -207,19 +147,10 @@ Edite `src/index.css` para customizar cores, tipografia e temas:
 
 ```css
 @theme {
-  --color-primary: your-color;
-  --font-sans: your-font;
+  --color-brand-strong: #2563eb;
+  --font-display: "Space Grotesk", sans-serif;
 }
 ```
-
-### Adicionar Novos Componentes
-
-```bash
-# shadcn/ui oferece mais componentes!
-npx shadcn@latest add [component-name]
-```
-
-Veja todos em: https://ui.shadcn.com/docs/components
 
 ## 📝 Estrutura de Dados
 
@@ -229,15 +160,21 @@ Veja todos em: https://ui.shadcn.com/docs/components
 {
   "name": "Seu Nome",
   "title": "Seu Cargo/Título",
+  "tagline": "Frase de impacto do topo",
   "description": "Breve descrição sobre você",
+  "photo": "images/profile.webp",
   "email": "seu@email.com",
   "linkedin": "https://linkedin.com/in/seu-perfil",
   "github": "https://github.com/seu-usuario",
+  "lattes": "",
+  "scholar": "",
   "location": "Sua Cidade, País"
 }
 ```
 
-### Exemplo: `projects.json`
+Links vazios (`""`) não aparecem no site.
+
+### Exemplo: `dev-projects.json`
 
 ```json
 [
@@ -248,13 +185,12 @@ Veja todos em: https://ui.shadcn.com/docs/components
     "technologies": ["Tech 1", "Tech 2"],
     "github": "https://github.com/...",
     "demo": "https://demo.com",
-    "image": "/images/projects/projeto.png",
     "order": 1
   }
 ]
 ```
 
-📖 **Documentação completa:** [`public/data/README.md`](public/data/README.md)
+📖 **Documentação completa:** [`src/data/README.md`](src/data/README.md)
 
 ## 🔒 Segurança
 
@@ -269,29 +205,31 @@ Este portfólio é 100% estático, sem servidor ou banco de dados. Isso signific
 
 ### Problema: Página em branco no GitHub Pages
 
-**Solução:** Verifique se o `base` no `vite.config.ts` está correto:
+**Solução:** O `base` do `vite.config.ts` precisa ser o nome do repositório. Ele é definido automaticamente no build do GitHub Actions (variável `GITHUB_PAGES`):
 
 ```typescript
 export default defineConfig({
-  base: '/portfolio/', // deve ser o nome do seu repositório
+  base: process.env.GITHUB_PAGES ? '/portfolio/' : '/',
 })
 ```
 
+Imagens e outros arquivos devem usar caminhos relativos, sem `/` no início (`images/...`).
+
 ### Problema: Dados não aparecem
 
-**Solução:** Verifique se os arquivos JSON estão em `public/data/` e são válidos:
+**Solução:** Verifique se os arquivos JSON estão em `src/data/` e são válidos:
 
 ```bash
 # Valide o JSON
-cat public/data/personal-info.json | json_pp
+cat src/data/personal-info.json | json_pp
 ```
 
 ### Problema: Erro de compilação TypeScript
 
-**Solução:** Verifique seus imports e tipos:
+**Solução:** O build roda a checagem de tipos. Rode e leia o erro:
 
 ```bash
-npm run lint
+npm run build
 ```
 
 ## 🤝 Contribuindo
@@ -310,9 +248,9 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 ## 📧 Contato
 
-Jean Carlos - [@seu-twitter](https://twitter.com/seu-twitter)
+Jean Carlos - [jeancc.costa@gmail.com](mailto:jeancc.costa@gmail.com) · [LinkedIn](https://linkedin.com/in/jeancc-costa)
 
-Link do Projeto: [https://github.com/seu-usuario/portfolio](https://github.com/seu-usuario/portfolio)
+Link do Projeto: [https://github.com/jeancarloscc/portfolio](https://github.com/jeancarloscc/portfolio)
 
 ---
 
