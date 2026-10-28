@@ -167,7 +167,6 @@ Edite `src/index.css` para customizar cores, tipografia e temas:
   "linkedin": "https://linkedin.com/in/seu-perfil",
   "github": "https://github.com/seu-usuario",
   "lattes": "",
-  "scholar": "",
   "location": "Sua Cidade, País"
 }
 ```
@@ -244,7 +243,9 @@ Este é um projeto pessoal, mas sugestões são bem-vindas!
 
 ## 📄 Licença
 
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+O código deste projeto está sob a licença MIT. Veja o arquivo [`LICENSE`](./LICENSE).
+
+O conteúdo pessoal **não** faz parte da licença e não pode ser reutilizado: textos e dados em `src/data/`, foto e imagens em `public/images/` e a página `public/privacidade-capim.html`.
 
 ## 📧 Contato
 
