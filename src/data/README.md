@@ -5,18 +5,21 @@ Este diretório contém todos os dados do portfólio em formato JSON estático, 
 ## 📂 Estrutura de Arquivos
 
 ```
-public/data/
-├── personal-info.json   # Informações pessoais e contatos
-├── education.json       # Formação acadêmica
-├── skills.json          # Habilidades técnicas por categoria
-├── projects.json        # Projetos desenvolvidos
-├── publications.json    # Artigos e publicações
-└── experience.json      # Experiências profissionais
+src/data/
+├── personal-info.json       # Informações pessoais e contatos
+├── about.json               # Pilares da seção "O que eu faço"
+├── education.json           # Formação acadêmica
+├── skills.json              # Habilidades técnicas por categoria
+├── projects.json            # Projetos de pesquisa
+├── dev-projects.json        # Repositórios do GitHub
+├── publications.json        # Artigos e publicações
+├── experience.json          # Experiências profissionais
+└── extension-projects.json  # Projetos de extensão (ainda não exibidos)
 ```
 
 ## 🎯 Como Funciona
 
-O frontend busca esses arquivos JSON diretamente através de requisições `fetch()` ao invés de usar um backend API. Isso permite que o site funcione completamente estático no GitHub Pages.
+Os arquivos JSON são importados no build (`src/data/index.ts`), então o conteúdo já vai junto com o site e não há tela de carregamento. Para atualizar, edite o JSON e faça push.
 
 ## ✏️ Como Editar os Dados
 
@@ -26,12 +29,35 @@ O frontend busca esses arquivos JSON diretamente através de requisições `fetc
 {
   "name": "Seu Nome",
   "title": "Seu Cargo",
+  "tagline": "Frase de impacto do topo",
   "description": "Sua descrição...",
+  "photo": "images/profile.webp",
   "email": "seu@email.com",
   "linkedin": "https://linkedin.com/in/seu-perfil",
   "github": "https://github.com/seu-usuario",
+  "instagram": "https://instagram.com/seu-perfil",
+  "lattes": "http://lattes.cnpq.br/...",
+  "scholar": "https://scholar.google.com/citations?user=...",
   "location": "Sua Cidade, País"
 }
+```
+
+Links vazios (`""`) não aparecem no site. Use sempre a URL completa, com `https://`.
+
+### **O que eu faço** (`about.json`)
+
+Três pilares. `skillGroups` lista as categorias de `skills.json` cujas habilidades aparecem no card. `icon` aceita `research`, `engineering` ou `teaching`.
+
+```json
+[
+  {
+    "id": "research",
+    "icon": "research",
+    "title": "Pesquisa",
+    "text": "Texto curto do pilar.",
+    "skillGroups": ["Machine Learning & Deep Learning"]
+  }
+]
 ```
 
 ### 2. **Educação** (`education.json`)
@@ -131,7 +157,7 @@ Depois de editar os dados:
 
 ```bash
 # 1. Adicione as alterações
-git add public/data/
+git add src/data/
 
 # 2. Faça commit
 git commit -m "Atualiza dados do portfólio"
@@ -146,7 +172,7 @@ O GitHub Actions irá automaticamente fazer o build e deploy das alterações! �
 
 - **IDs:** Mantenha os IDs únicos em cada arquivo
 - **Order:** Use o campo `order` para controlar a ordem de exibição
-- **Imagens:** Use URLs relativas (`/images/...`) ou URLs absolutas
+- **Imagens:** Use caminhos relativos sem `/` no início (`images/...`), por causa do subcaminho `/portfolio/` do GitHub Pages
 - **Links:** Certifique-se que todos os links estejam corretos e acessíveis
 - **Formatação:** Use um validador JSON para evitar erros de sintaxe
 

@@ -77,18 +77,5 @@
       "Planejamento e execução de aulas de Computação"
     ],
     "order": 6
-  },
-  {
-    "id": 7,
-    "role": "Técnico de Nível Superior",
-    "organization": "Prefeitura Municipal de Capitão Poço - CREAS",
-    "period": "2017 - 2022",
-    "description": "Técnico de Nível Superior no Serviço Especializado em Abordagem Social do Centro de Referência Especializado de Assistência Social (CREAS). Atendimento especializado à população em situação de vulnerabilidade e trabalho em equipe multidisciplinar.",
-    "achievements": [
-      "Atendimento especializado à população em situação de vulnerabilidade",
-      "Participação na organização da Conferência Municipal de Assistência Social (07/2017)",
-      "Trabalho em equipe multidisciplinar do CREAS"
-    ],
-    "order": 7
   }
 ]

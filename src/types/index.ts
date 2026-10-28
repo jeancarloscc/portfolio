@@ -5,17 +5,20 @@
 export interface PersonalInfo {
   name: string;
   title: string;
+  tagline: string;
   description: string;
   email: string;
   location: string;
   linkedin: string;
   github: string;
   instagram?: string;
+  lattes?: string;
+  scholar?: string;
   photo?: string;
 }
 
 export interface Education {
-  id: string;
+  id: number;
   degree: string;
   institution: string;
   period: string;
@@ -24,13 +27,12 @@ export interface Education {
 }
 
 export interface SkillGroup {
-  id: string;
   category: string;
   items: string[];
 }
 
 export interface Project {
-  id: string;
+  id: number;
   title: string;
   institution: string;
   period: string;
@@ -39,11 +41,11 @@ export interface Project {
   coordinator: string;
   role: string;
   keywords?: string[];
-  productions?: string;
+  productions?: number;
 }
 
 export interface DevProject {
-  id?: string;
+  id: number;
   title: string;
   description?: string;
   longDescription?: string;
@@ -59,12 +61,18 @@ export interface DevProject {
   order?: number;
 }
 
+export type PublicationCategory =
+  | 'Periódicos'
+  | 'Capítulos de Livros'
+  | 'Eventos Completos'
+  | 'Eventos Resumos';
+
 export interface Publication {
-  id: string;
+  id: number;
   title: string;
   authors: string;
   type: string;
-  category: 'Periódicos' | 'Capítulos de Livros' | 'Eventos Completos' | 'Eventos Resumos';
+  category: PublicationCategory;
   venue: string;
   year: number;
   qualis?: string;
@@ -73,10 +81,11 @@ export interface Publication {
   issn?: string;
   isbn?: string;
   link?: string;
+  order?: number;
 }
 
 export interface Experience {
-  id: string;
+  id: number;
   role: string;
   organization: string;
   period: string;
@@ -84,30 +93,16 @@ export interface Experience {
   achievements: string[];
 }
 
-// ============================================
-// TIPOS DE ESTADO E UI
-// ============================================
-
-export type SectionId = 
-  | 'home' 
-  | 'skills' 
-  | 'projects' 
-  | 'dev-projects' 
-  | 'publications' 
-  | 'experience' 
-  | 'contact';
-
-export interface LoadingState {
-  isLoading: boolean;
-  error: string | null;
+export interface AboutPillar {
+  id: string;
+  icon: 'research' | 'engineering' | 'teaching';
+  title: string;
+  text: string;
+  skillGroups: string[];
 }
 
-export interface PortfolioData {
-  personalInfo: PersonalInfo | null;
-  education: Education[];
-  skills: SkillGroup[];
-  projects: Project[];
-  devProjects: DevProject[];
-  publications: Publication[];
-  experience: Experience[];
-}
+// ============================================
+// TIPOS DE UI
+// ============================================
+
+export type SectionId = 'home' | 'about' | 'research' | 'code' | 'journey' | 'contact';

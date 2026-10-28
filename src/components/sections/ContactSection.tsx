@@ -1,91 +1,52 @@
-import { Mail, MapPin, Linkedin, Github, Instagram } from 'lucide-react';
-import { Button } from '../ui/button';
-import { Card, CardContent } from '../ui/card';
-import { SectionContainer, SectionHeader } from '../common/SectionHeader';
-import { colors, transitions } from '../../constants/theme';
+import { BookOpen, Github, GraduationCap, Instagram, Linkedin, Mail, MapPin } from 'lucide-react';
+import { Section } from '../common/Section';
 import type { PersonalInfo } from '../../types';
 
 interface ContactSectionProps {
   personalInfo: PersonalInfo;
 }
 
-/**
- * Seção de Contato
- */
 export function ContactSection({ personalInfo }: ContactSectionProps) {
+  const links = [
+    { label: 'LinkedIn', url: personalInfo.linkedin, Icon: Linkedin },
+    { label: 'GitHub', url: personalInfo.github, Icon: Github },
+    { label: 'Lattes', url: personalInfo.lattes, Icon: BookOpen },
+    { label: 'Google Scholar', url: personalInfo.scholar, Icon: GraduationCap },
+    { label: 'Instagram', url: personalInfo.instagram, Icon: Instagram },
+  ].filter((link) => link.url);
+
   return (
-    <SectionContainer id="contact">
-      <div className="max-w-4xl mx-auto text-center">
-        <SectionHeader
-          icon={Mail}
-          title="Contato"
-          subtitle="Interessado em colaborações ou tem alguma pergunta? Entre em contato!"
-          className="text-center flex flex-col items-center"
-        />
+    <Section id="contact" kicker="Contato" title="Vamos conversar? 👋" className="text-center [&_h2]:mb-4">
+      <p className="text-ink-muted text-lg">Aberto a vagas, colaborações de pesquisa e convites.</p>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
-          <Card className="border-none shadow-sm">
-            <CardContent className="pt-6">
-              <Mail className="w-8 h-8 mx-auto mb-4" style={{ color: colors.primary }} />
-              <p className="text-sm font-medium mb-2" style={{ color: colors.text.secondary }}>
-                Email
-              </p>
-              <p className="text-base" style={{ color: colors.text.primary }}>
-                {personalInfo.email}
-              </p>
-            </CardContent>
-          </Card>
+      <a
+        href={`mailto:${personalInfo.email}`}
+        className="inline-flex items-center gap-2 mt-8 bg-brand-strong text-white font-medium px-6 py-3 rounded-lg hover:bg-brand-strong/90 transition-colors break-all"
+      >
+        <Mail className="w-5 h-5 shrink-0" aria-hidden="true" />
+        {personalInfo.email}
+      </a>
 
-          <Card className="border-none shadow-sm">
-            <CardContent className="pt-6">
-              <MapPin className="w-8 h-8 mx-auto mb-4" style={{ color: colors.primary }} />
-              <p className="text-sm font-medium mb-2" style={{ color: colors.text.secondary }}>
-                Localização
-              </p>
-              <p className="text-base" style={{ color: colors.text.primary }}>
-                {personalInfo.location}
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="flex items-center justify-center flex-wrap gap-4">
-          <Button
-            variant="outline"
-            size="lg"
-            className={transitions.scale}
-            style={{ borderColor: colors.primary, color: colors.primary }}
-            onClick={() => window.open(`https://${personalInfo.linkedin}`, '_blank')}
-          >
-            <Linkedin className="w-5 h-5 mr-2" />
-            LinkedIn
-          </Button>
-
-          <Button
-            variant="outline"
-            size="lg"
-            className={transitions.scale}
-            style={{ borderColor: colors.primary, color: colors.primary }}
-            onClick={() => window.open(`https://${personalInfo.github}`, '_blank')}
-          >
-            <Github className="w-5 h-5 mr-2" />
-            GitHub
-          </Button>
-
-          {personalInfo.instagram && (
-            <Button
-              variant="outline"
-              size="lg"
-              className={transitions.scale}
-              style={{ borderColor: colors.primary, color: colors.primary }}
-              onClick={() => window.open(`https://${personalInfo.instagram}`, '_blank')}
+      <ul className="flex flex-wrap justify-center gap-3 mt-8">
+        {links.map(({ label, url, Icon }) => (
+          <li key={label}>
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-line text-ink px-4 py-2 rounded-lg hover:border-brand-soft transition-colors"
             >
-              <Instagram className="w-5 h-5 mr-2" />
-              Instagram
-            </Button>
-          )}
-        </div>
-      </div>
-    </SectionContainer>
+              <Icon className="w-4 h-4" aria-hidden="true" />
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <p className="inline-flex items-center gap-1.5 mt-8 text-ink-muted text-sm">
+        <MapPin className="w-4 h-4" aria-hidden="true" />
+        {personalInfo.location}
+      </p>
+    </Section>
   );
 }

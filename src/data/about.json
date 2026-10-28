@@ -1,0 +1,23 @@
+[
+  {
+    "id": "research",
+    "icon": "research",
+    "title": "Pesquisa",
+    "text": "Investigo como modelos de Machine Learning, Deep Learning e LLMs podem resolver problemas reais, da educação à segurança pública.",
+    "skillGroups": ["Machine Learning & Deep Learning", "Processamento de Linguagem Natural", "Large Language Models"]
+  },
+  {
+    "id": "engineering",
+    "icon": "engineering",
+    "title": "Engenharia",
+    "text": "Transformo ideias em código: pipelines de dados, modelos em produção e sistemas bem testados.",
+    "skillGroups": ["Ciência de Dados", "Ferramentas & Plataformas"]
+  },
+  {
+    "id": "teaching",
+    "icon": "teaching",
+    "title": "Ensino",
+    "text": "Professor de computação na UNIASSELVI e na UNAMA, com experiência em monitoria e orientação na UFRA. Gosto de explicar IA de um jeito simples.",
+    "skillGroups": []
+  }
+]

@@ -27,21 +27,14 @@ export function useScrollNavigation() {
         });
       },
       {
-        threshold: 0.3, // 30% da seção visível
-        rootMargin: '-80px 0px -80px 0px', // Compensar header fixo
+        // Ativa a seção que cruza a linha do meio da tela. Funciona também
+        // para seções mais altas que a tela, que nunca chegariam a 30% visível.
+        rootMargin: '-50% 0px -50% 0px',
       }
     );
 
     // Observar todas as seções
-    const sections = [
-      'home',
-      'skills',
-      'projects',
-      'dev-projects',
-      'publications',
-      'experience',
-      'contact',
-    ];
+    const sections: SectionId[] = ['home', 'about', 'research', 'code', 'journey', 'contact'];
 
     sections.forEach((id) => {
       const element = document.getElementById(id);

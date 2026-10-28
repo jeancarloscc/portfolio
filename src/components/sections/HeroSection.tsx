@@ -1,89 +1,88 @@
-import { Brain, ChevronRight } from 'lucide-react';
-import { Button } from '../ui/button';
-import { Badge } from '../ui/badge';
-import { colors, transitions } from '../../constants/theme';
+import { Github } from 'lucide-react';
+import { HeroBackground } from '../hero/HeroBackground';
 import type { PersonalInfo, SectionId } from '../../types';
 
 interface HeroSectionProps {
   personalInfo: PersonalInfo;
+  stats: { publications: number; projects: number; repositories: number };
   onNavigate: (section: SectionId) => void;
 }
 
+const outlineLink =
+  'inline-flex items-center gap-2 border border-line text-ink font-medium px-4 py-2.5 rounded-lg hover:border-brand-soft transition-colors';
+
 /**
- * Seção Hero/Apresentação principal
+ * Topo: quem é, o que faz e números que dão credibilidade.
  */
-export function HeroSection({ personalInfo, onNavigate }: HeroSectionProps) {
+export function HeroSection({ personalInfo, stats, onNavigate }: HeroSectionProps) {
+  const numbers = [
+    { value: stats.publications, label: 'publicações' },
+    { value: stats.projects, label: 'projetos de pesquisa' },
+    { value: stats.repositories, label: 'repositórios' },
+  ];
+
   return (
-    <section id="home" className="pt-32 pb-20 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Conteúdo */}
-          <div>
-            <div className="inline-block mb-4">
-              <Badge
-                variant="secondary"
-                className="text-sm px-4 py-1"
-                style={{ backgroundColor: colors.background.accent, color: colors.primary, border: 'none' }}
-              >
-                Inteligência Artificial
-              </Badge>
-            </div>
+    <section
+      id="home"
+      aria-labelledby="home-title"
+      className="relative overflow-hidden bg-gradient-to-b from-night to-night-2"
+    >
+      <HeroBackground />
 
-            <h1
-              className="text-5xl md:text-6xl font-light mb-6"
-              style={{ color: colors.text.primary, letterSpacing: '-0.02em' }}
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-28 pb-32 sm:pt-36 sm:pb-40 grid md:grid-cols-[1.4fr_1fr] gap-10 items-center">
+        <div>
+          <p className="text-sky text-xs uppercase tracking-widest font-medium mb-4">{personalInfo.title}</p>
+          <h1 id="home-title" className="font-display text-4xl sm:text-5xl font-semibold tracking-tight">
+            {personalInfo.name}
+          </h1>
+          <p className="font-display text-2xl sm:text-3xl text-ink mt-3 leading-snug">{personalInfo.tagline}</p>
+          <p className="text-ink-muted mt-5 leading-relaxed max-w-xl">{personalInfo.description}</p>
+
+          <ul className="flex flex-wrap gap-x-8 gap-y-4 mt-8">
+            {numbers.map(({ value, label }) => (
+              <li key={label} className="flex flex-col">
+                <span className="font-display text-3xl font-semibold">{value}</span>
+                <span className="text-ink-muted text-sm">{label}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex flex-wrap gap-3 mt-8">
+            <button
+              onClick={() => onNavigate('research')}
+              className="bg-brand-strong text-white font-medium px-5 py-2.5 rounded-lg hover:bg-brand-strong/90 transition-colors"
             >
-              {personalInfo.name}
-            </h1>
-
-            <h2 className="text-2xl font-light mb-6" style={{ color: colors.text.secondary }}>
-              {personalInfo.title}
-            </h2>
-
-            <p className="text-lg leading-relaxed mb-8" style={{ color: colors.text.secondary }}>
-              {personalInfo.description}
-            </p>
-
-            <div className="flex items-center space-x-4">
-              <Button
-                onClick={() => onNavigate('contact')}
-                className={transitions.scale}
-                style={{ backgroundColor: colors.primary }}
-              >
-                Entre em Contato
-                <ChevronRight className="ml-2 w-4 h-4" />
-              </Button>
-
-              <Button
-                onClick={() => onNavigate('projects')}
-                variant="outline"
-                className={transitions.scale}
-                style={{ borderColor: colors.primary, color: colors.primary }}
-              >
-                Ver Projetos
-              </Button>
-            </div>
-          </div>
-
-          {/* Visual */}
-          <div className="flex items-center justify-center">
-            {personalInfo.photo ? (
-              <img 
-                src={personalInfo.photo} 
-                alt={personalInfo.name}
-                className="w-80 h-80 rounded-full object-cover shadow-2xl"
-                style={{ border: `4px solid ${colors.primary}` }}
-              />
-            ) : (
-              <div
-                className="w-80 h-80 rounded-full flex items-center justify-center"
-                style={{ backgroundColor: colors.background.accent }}
-              >
-                <Brain className="w-40 h-40" style={{ color: colors.primary, opacity: 0.5 }} />
-              </div>
+              Ver pesquisa
+            </button>
+            <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className={outlineLink}>
+              <Github className="w-4 h-4" aria-hidden="true" /> GitHub
+            </a>
+            {personalInfo.lattes && (
+              <a href={personalInfo.lattes} target="_blank" rel="noopener noreferrer" className={outlineLink}>
+                Lattes
+              </a>
+            )}
+            {personalInfo.scholar && (
+              <a href={personalInfo.scholar} target="_blank" rel="noopener noreferrer" className={outlineLink}>
+                Google Scholar
+              </a>
             )}
           </div>
         </div>
+
+        {personalInfo.photo && (
+          <div className="flex justify-center order-first md:order-none">
+            <img
+              src={personalInfo.photo}
+              alt={`Foto de ${personalInfo.name}`}
+              width={320}
+              height={320}
+              fetchPriority="high"
+              decoding="async"
+              className="w-56 h-56 md:w-72 md:h-72 rounded-full object-cover ring-2 ring-brand ring-offset-4 ring-offset-night shadow-2xl"
+            />
+          </div>
+        )}
       </div>
     </section>
   );

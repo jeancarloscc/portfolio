@@ -1,78 +1,55 @@
 @import "tailwindcss";
 
+/* Tema "Rede e rio". Contraste conferido: todo texto ≥ 4.5:1 (WCAG AA). */
+@theme {
+  --color-night: #071226;
+  --color-night-2: #0a1b38;
+  --color-surface: rgb(255 255 255 / 0.04);
+  --color-line: rgb(143 166 204 / 0.14);
+  --color-ink: #eaf1ff;          /* 13.7:1 no card */
+  --color-ink-muted: #9fb3d6;    /* 7.3:1 no card */
+  --color-brand: #3b82f6;        /* só bordas, desenhos e foco: nunca fundo de texto branco (3.68:1) */
+  --color-brand-strong: #2563eb; /* fundo de botão com texto branco: 5.17:1 */
+  --color-brand-soft: #60a5fa;   /* links e realces de texto: 6.1:1 no card */
+  --color-sky: #7dd3fc;          /* kickers */
+  --color-chip: #bcd4ff;
+  --color-ok: #86efac;
+  --color-ok-bg: rgb(74 222 128 / 0.14);
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", ui-sans-serif, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-night text-ink font-sans antialiased;
 }
 
-:root {
-  /* Brand */
-  --brand: 233 86% 54%; /* #4169E1 */
-  --brand-2: 248 53% 58%; /* #6A5ACD */
-  --surface: 240 10% 4%;
-  --surface-2: 240 10% 6%;
-  --text-muted: 240 5% 64.9%;
-
-  --background: 0 0% 100%;
-  --foreground: 240 10% 3.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 240 10% 3.9%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 240 10% 3.9%;
-  --primary: 240 5.9% 10%;
-  --primary-foreground: 0 0% 98%;
-  --secondary: 240 4.8% 95.9%;
-  --secondary-foreground: 240 5.9% 10%;
-  --muted: 240 4.8% 95.9%;
-  --muted-foreground: 240 3.8% 46.1%;
-  --accent: 240 4.8% 95.9%;
-  --accent-foreground: 240 5.9% 10%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 240 5.9% 90%;
-  --input: 240 5.9% 90%;
-  --ring: 240 5.9% 10%;
-  --radius: 0.5rem;
-  --chart-1: 12 76% 61%;
-  --chart-2: 173 58% 39%;
-  --chart-3: 197 37% 24%;
-  --chart-4: 43 74% 66%;
-  --chart-5: 27 87% 67%;
+/* Compensa o header fixo ao rolar até uma seção */
+section[id] {
+  scroll-margin-top: 5rem;
 }
 
-.dark {
-  --background: 240 10% 3.9%;
-  --foreground: 0 0% 98%;
-  --card: 240 10% 3.9%;
-  --card-foreground: 0 0% 98%;
-  --popover: 240 10% 3.9%;
-  --popover-foreground: 0 0% 98%;
-  --primary: 0 0% 98%;
-  --primary-foreground: 240 5.9% 10%;
-  --secondary: 240 3.7% 15.9%;
-  --secondary-foreground: 0 0% 98%;
-  --muted: 240 3.7% 15.9%;
-  --muted-foreground: 240 5% 64.9%;
-  --accent: 240 3.7% 15.9%;
-  --accent-foreground: 0 0% 98%;
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 240 3.7% 15.9%;
-  --input: 240 3.7% 15.9%;
-  --ring: 240 4.9% 83.9%;
-  --chart-1: 220 70% 50%;
-  --chart-2: 160 60% 45%;
-  --chart-3: 30 80% 55%;
-  --chart-4: 280 65% 60%;
-  --chart-5: 340 75% 55%;
-}
-
-/* Base tweaks */
 ::selection {
-  background: hsl(var(--brand)/0.25);
+  background: rgb(59 130 246 / 0.3);
 }
 
-/* Focus visibility for accessibility */
 :focus-visible {
-  outline: 2px solid hsl(var(--brand));
+  outline: 2px solid var(--color-brand-soft);
   outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
