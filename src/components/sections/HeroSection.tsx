@@ -62,11 +62,6 @@ export function HeroSection({ personalInfo, stats, onNavigate }: HeroSectionProp
                 Lattes
               </a>
             )}
-            {personalInfo.scholar && (
-              <a href={personalInfo.scholar} target="_blank" rel="noopener noreferrer" className={outlineLink}>
-                Google Scholar
-              </a>
-            )}
           </div>
         </div>
 

@@ -14,7 +14,7 @@ src/data/
 ├── dev-projects.json        # Repositórios do GitHub
 ├── publications.json        # Artigos e publicações
 ├── experience.json          # Experiências profissionais
-└── extension-projects.json  # Projetos de extensão (ainda não exibidos)
+└── extension-projects.json  # Projetos de extensão
 ```
 
 ## 🎯 Como Funciona
@@ -37,7 +37,6 @@ Os arquivos JSON são importados no build (`src/data/index.ts`), então o conte�
   "github": "https://github.com/seu-usuario",
   "instagram": "https://instagram.com/seu-perfil",
   "lattes": "http://lattes.cnpq.br/...",
-  "scholar": "https://scholar.google.com/citations?user=...",
   "location": "Sua Cidade, País"
 }
 ```

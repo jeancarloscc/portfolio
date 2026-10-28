@@ -30,12 +30,10 @@ src/
 |---|---|---|---|
 | 1 | `home` | `HeroSection` | `personal-info.json` + totais de publicações, projetos e repositórios |
 | 2 | `about` | `AboutSection` | `about.json` + `skills.json` |
-| 3 | `research` | `ResearchSection` | `publications.json` + `projects.json` |
+| 3 | `research` | `ResearchSection` | `publications.json` + `projects.json` + `extension-projects.json` |
 | 4 | `code` | `CodeSection` | `dev-projects.json` |
 | 5 | `journey` | `JourneySection` | `education.json` + `experience.json` |
 | 6 | `contact` | `ContactSection` | `personal-info.json` |
-
-`extension-projects.json` ainda não é exibido.
 
 ## Dados
 

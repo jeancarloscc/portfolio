@@ -13,7 +13,6 @@ export interface PersonalInfo {
   github: string;
   instagram?: string;
   lattes?: string;
-  scholar?: string;
   photo?: string;
 }
 

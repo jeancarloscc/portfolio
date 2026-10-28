@@ -1,4 +1,4 @@
-import { BookOpen, Github, GraduationCap, Instagram, Linkedin, Mail, MapPin } from 'lucide-react';
+import { BookOpen, Github, Instagram, Linkedin, Mail, MapPin } from 'lucide-react';
 import { Section } from '../common/Section';
 import type { PersonalInfo } from '../../types';
 
@@ -11,7 +11,6 @@ export function ContactSection({ personalInfo }: ContactSectionProps) {
     { label: 'LinkedIn', url: personalInfo.linkedin, Icon: Linkedin },
     { label: 'GitHub', url: personalInfo.github, Icon: Github },
     { label: 'Lattes', url: personalInfo.lattes, Icon: BookOpen },
-    { label: 'Google Scholar', url: personalInfo.scholar, Icon: GraduationCap },
     { label: 'Instagram', url: personalInfo.instagram, Icon: Instagram },
   ].filter((link) => link.url);
 

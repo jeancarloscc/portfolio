@@ -13,6 +13,7 @@ import {
   devProjects,
   education,
   experience,
+  extensionProjects,
   personalInfo,
   projects,
   publications,
@@ -33,7 +34,7 @@ export default function Home() {
           onNavigate={scrollToSection}
         />
         <AboutSection pillars={about} skills={skills} />
-        <ResearchSection publications={publications} projects={projects} />
+        <ResearchSection publications={publications} projects={projects} extensionProjects={extensionProjects} />
         <CodeSection projects={devProjects} githubUrl={personalInfo.github} />
         <JourneySection items={buildJourney(education, experience)} />
         <ContactSection personalInfo={personalInfo} />

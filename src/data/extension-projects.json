@@ -1,6 +1,19 @@
 [
   {
     "id": 1,
+    "title": "PROLIA: Programa de Letramento em Inteligência Artificial",
+    "description": "Projeto de extensão voltado à inclusão digital e ao letramento em tecnologias digitais e Inteligência Artificial, com foco em públicos em situação de vulnerabilidade socioeconômica. Oferece cursos e oficinas para a comunidade interna e externa à Universidade Federal do Pará sobre o uso crítico, ético e responsável dessas tecnologias, com materiais didáticos digitais acessíveis e acompanhamento por indicadores quantitativos e qualitativos. A iniciativa integra ensino, pesquisa e extensão e contribui para a redução de desigualdades educacionais.",
+    "period": "2026 - Atual",
+    "status": "Em andamento",
+    "type": "Extensão",
+    "institution": "Universidade Federal do Pará (UFPA)",
+    "role": "Integrante",
+    "coordinator": "Reginaldo Cordeiro dos Santos Filho",
+    "team": ["Jean Carlos de Carvalho Costa", "Samara Lima de Souza", "Reginaldo Cordeiro dos Santos Filho", "Helder Mateus dos Reis Matos", "Aldrey Sandre dos Santos Cordeiro", "Marcos Vinicius Brito de Araujo", "Maria Luiza Rodrigues Siqueira", "Vitor Cardoso de Moraes", "Eduardo Kohei Seko", "Emilly Caroline Oliveira de Lima"],
+    "order": 1
+  },
+  {
+    "id": 2,
     "title": "Abordagens sobre Pesquisa Científica em Contextos Universitários",
     "description": "Projeto de extensão universitária que visa capacitar alunos de instituições de ensino superior de Capitão Poço-PA nos fundamentos da construção do conhecimento científico. Busca levar os estudantes a compreenderem a lógica da pesquisa científica, possibilitando a elaboração, desenvolvimento e execução de trabalhos acadêmicos e projetos com embasamento científico. Realizado em modalidades presenciais e remotas (Google Meet e YouTube).",
     "period": "2024 - Atual",
@@ -12,21 +25,6 @@
     "target": "500 participantes das comunidades interna e externa à UFRA",
     "team": ["Jean Carlos de Carvalho Costa", "Almir Pantoja Rodrigues", "Áurea Peniche Martins", "Regiane Vanessa de Souza Baia", "Elianne Barreto Sabino", "Allan Douglas Bento da Costa", "Janice Souza Santos", "Ruany Vitória Borges da Silva", "Terezinha de Jesus de Oliveira Moraes", "Cynthia Débora da Cunha de Oliveira", "Maura da Silva Costa Furtado", "Cristiana Guerra Matos", "Eric Victor de Oliveira Ferreira", "Felipe Fajardo Villela Antolin Barberena", "Raimundo Thiago Lima da Silva", "José Darlon Nascimento Alves"],
     "keywords": ["Pesquisa Científica", "Extensão Universitária", "Metodologia Científica", "Capacitação Acadêmica"],
-    "order": 1
-  },
-  {
-    "id": 2,
-    "title": "A Tecnologia da Informação na Sala de Aula: O Facebook como Ferramenta Pedagógica nas Aulas de Literatura Luso Brasileira",
-    "description": "Projeto de extensão que utilizou o Facebook como ferramenta pedagógica para o ensino-aprendizagem da disciplina de Literatura Luso Brasileira, contemplando atividades presenciais e online. Aplicado na Escola Estadual Padre Vitaliano Maria Vari.",
-    "period": "2017",
-    "status": "Concluído",
-    "type": "Extensão",
-    "institution": "UFRA - Campus Capitão Poço",
-    "role": "Integrante",
-    "coordinator": "Almir Pantoja Rodrigues",
-    "location": "Escola Estadual Padre Vitaliano Maria Vari",
-    "team": ["Jean Carlos de Carvalho Costa", "Edivane Coutinho Maciel", "Paula Valena Santos das Mercês", "Almir Pantoja Rodrigues", "Carlos Jean Ferreira de Quadros"],
-    "keywords": ["Tecnologia na Educação", "Facebook", "Literatura", "Ferramenta Pedagógica", "Redes Sociais na Educação"],
     "order": 2
   }
 ]
